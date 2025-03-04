@@ -94,6 +94,18 @@
         button:hover {
             background-color: #E64A19; /* 更深的橘紅色 */
         }
+
+        .result-section {
+            margin-top: 30px;
+            display: none;
+        }
+        .result-section p {
+            font-size: 18px;
+            color: #FF7043;
+        }
+
+
+
         /* 影片區塊 */
         .video-section {
             margin-top: 50px;
@@ -184,13 +196,19 @@
     -->
 
     <section>
-        <h2>🔑 學習資源登入 🔑</h2>
+        <h2>🔑 學員帳號密碼 🔑</h2>
         <form id="loginForm">
             <input type="text" id="name" name="name" placeholder="輸入姓名" required>
             <input type="text" id="code" name="code" placeholder="輸入代碼" required>
             <button type="submit">驗證</button>
         </form>
+
+        <div id="resultSection" class="result-section">
+            <p>帳號: <span id="account"></span></p>
+            <p>密碼: <span id="password"></span></p>
+        </div>
     </section>
+
 
 
     <!-- 
@@ -203,9 +221,9 @@
     </section>
 -->
 
-
+  
     <!-- 成品展示 -->
-    
+    <!--
     <section class="video-section">
         <h3>程式成品展示</h3>
         <div class="video-row">
@@ -273,9 +291,10 @@
 
         </div>
     </section>
+    -->
 
 <!-- 114寒假成品展示 -->
-    
+   <!-- 
 <section class="video-section">
     <h3>程式成品展示</h3>
     <div class="video-row">
@@ -315,7 +334,7 @@
 
     </div>
 </section>
-
+-->
 
 
     <footer>
@@ -342,10 +361,12 @@
             { name: '王泫云', code: '567VP', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'Z(774314858691al' },
             { name: '王泫棠', code: '789JK', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'S*805847889716ux' }
         ];
+
         const form = document.getElementById('loginForm');
         const resultSection = document.getElementById('resultSection');
         const accountField = document.getElementById('account');
         const passwordField = document.getElementById('password');
+
         form.addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
@@ -355,14 +376,18 @@
                 accountField.textContent = user.account;
                 passwordField.textContent = user.password;
                 resultSection.style.display = 'block';
+
+                // 設定3分鐘後自動重置表單
                 setTimeout(() => {
+                    document.getElementById('name').value = '';
+                    document.getElementById('code').value = '';
                     resultSection.style.display = 'none';
-                    alert("帳號密碼已過期，請重新輸入姓名與代碼！");
-                }, 300000); // 5分鐘 = 300000毫秒
+                }, 180000); // 180000毫秒 = 3分鐘
             } else {
                 alert("無效的姓名或代碼，請重新輸入！");
             }
         });
+
     </script>
 </body>
 </html>
