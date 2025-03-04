@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>學習資源</title>
+    <style>
+        /* 頁面整體樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0F7FA; /* 淡藍色背景 */
+            color: #004D40; /* 深綠色文字 */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #0097A7; /* 淡藍色標題背景 */
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #80DEEA; /* 淡青色 */
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 15px;
+            color: #004D40; /* 深綠色文字 */
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #00695C; /* 深綠色的懸停效果 */
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        h2, h3 {
+            color: #00695C; /* 深藍綠色 */
+        }
+
+        footer {
+            background-color: #004D40; /* 深綠色背景 */
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 2px solid #0097A7; /* 淡藍色邊框 */
+            border-radius: 5px;
+        }
+
+        input:focus, button:focus {
+            border-color: #004D40; /* 深綠色焦點邊框 */
+        }
+
+        button {
+            background-color: #0097A7; /* 淡藍色背景 */
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00695C; /* 深綠色背景懸停 */
+        }
+
+        /* 讓學習資源部分隱藏，直到驗證正確 */
+        #resources {
+            display: none;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+
+    <script>
+        // 設定學員姓名和代碼對應
+        const members = {
+            "吳奕霆": "129AB",
+            "吳鈺棠": "357XZ",
+            "林祐瑋": "842LM",
+            "陳繹安": "230KJ",
+            "陳宣叡": "514YT",
+            "陳岳陽": "765QR",
+            "洪辰維": "301FG",
+            "李汶樸": "689WE",
+            "黃秉昇": "973OP",
+            "林晉皜": "456DV",
+            "楊子立": "712BN",
+            "楊子正": "874CX",
+            "魏瑜萱": "120ZA",
+            "蔡鎮憶": "638MQ",
+            "黃樂帆": "245HU",
+            "王景弘": "398TS",
+            "王泫云": "567VP",
+            "王泫棠": "789JK"
+        };
+
+        // 驗證姓名和代碼是否正確
+        function validateUser() {
+            const name = document.getElementById("name").value;
+            const code = document.getElementById("code").value;
+            
+            if (members[name] && members[name] === code) {
+                document.getElementById("resources").style.display = "block"; // 顯示學習資源
+                document.getElementById("loginForm").style.display = "none"; // 隱藏登入表單
+            } else {
+                alert("姓名或代碼錯誤，請重新輸入");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>學習資源</header>
+    <nav>
+        <a href="index.html">首頁</a>
+     <!--   <a href="login.html">登入</a>  -->
+     <!--   <a href="server.html">伺服器資訊</a>-->
+  <!--    <a href="events.html">活動公告</a>-->
+        <a href="gallery.html">作品展示</a>
+        <a href="learning.html">學習資源</a>
+        <a href="contact.html">聯絡我們</a>
+    </nav>
+
+    <!-- 登入表單 -->
+    <section id="loginForm">
+        <h2>請輸入姓名與代碼</h2>
+        <form onsubmit="event.preventDefault(); validateUser();">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" required><br><br>
+            <label for="code">代碼：</label>
+            <input type="text" id="code" required><br><br>
+            <button type="submit">確認</button>
+        </form>
+    </section>
+
+    <!-- 學習資源，預設隱藏，需正確驗證後才顯示 -->
+    <section id="resources">
+        <h2>學習資源介紹</h2>
+        <p>我們提供 Minecraft 教學和資源，讓你學習如何創建與設計。</p>
+        
+        <h3>12堂課 YouTube 影片</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=video1" target="_blank">Minecraft 基礎入門 - 第1課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video2" target="_blank">Minecraft 進階技巧 - 第2課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video3" target="_blank">Minecraft 建築設計 - 第3課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video4" target="_blank">Minecraft 生存挑戰 - 第4課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video5" target="_blank">Minecraft 伺服器設置 - 第5課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video6" target="_blank">Minecraft 模組製作 - 第6課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video7" target="_blank">Minecraft 世界探索 - 第7課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video8" target="_blank">Minecraft 教學與設計 - 第8課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video9" target="_blank">Minecraft 複雜結構 - 第9課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video10" target="_blank">Minecraft 冒險設計 - 第10課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video11" target="_blank">Minecraft 精選設計 - 第11課</a></li>
+            <li><a href="https://www.youtube.com/watch?v=video12" target="_blank">Minecraft 高階技巧 - 第12課</a></li>
+        </ul>
+
+        <h3>6大主題系列影片</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=series1" target="_blank">Minecraft 世界創建系列</a></li>
+            <li><a href="https://www.youtube.com/watch?v=series2" target="_blank">Minecraft 建築藝術系列</a></li>
+            <li><a href="https://www.youtube.com/watch?v=series3" target="_blank">Minecraft 探險與生存系列</a></li>
+            <li><a href="https://www.youtube.com/watch?v=series4" target="_blank">Minecraft 伺服器設置系列</a></li>
+            <li><a href="https://www.youtube.com/watch?v=series5" target="_blank">Minecraft 模組開發系列</a></li>
+            <li><a href="https://www.youtube.com/watch?v=series6" target="_blank">Minecraft 高階技巧系列</a></li>
+        </ul>
+    </section>
+
+    <footer>&copy; 2025 麥塊社團 | 版權所有</footer>
+</body>
+</html>

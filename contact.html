@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們</title>
+    <style>
+        /* 設定暖色系風格 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF3E0; /* 淡橙色背景 */
+            color: #5D4037; /* 深咖啡色文字 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 標題區 */
+        header {
+            background-color: #FF9800; /* 橙色標題 */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* 導覽列 */
+        nav {
+            background-color: #FFB74D; /* 橙黃色 */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #5D4037;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 15px;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #FF7043;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* 主要內容區 */
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FFE0B2;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #E65100;
+        }
+
+        /* 讓聯絡資訊美觀 */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #FFCC80;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        /* 兩欄佈局 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 兩欄 */
+            gap: 15px; /* 間距 */
+        }
+
+        .grid-item {
+            background-color: #FFD180;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #FF9800;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 小螢幕變單欄 */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>聯絡我們</header>
+    <nav>
+        <a href="index.html">首頁</a>
+        <a href="gallery.html">作品展示</a>
+        <a href="learning.html">學習資源</a>
+        <a href="contact.html">聯絡我們</a>
+    </nav>
+
+    <section>
+        <h2>聯絡方式</h2>
+        <p>你可以通過以下方式聯繫我們：</p>
+        <ul>
+            <li>📧 電子郵件：chinghungw@gmail.com.tw</li>
+            <li>📞 電話：0921335676</li>
+            <li>💬 Line：chinghungw</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>麥塊教學對象</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>🏫 學校教育</h3>
+                <ul>
+                    <li>📌 國小 2-6 年級：入門操作、基礎建築</li>
+                    <li>📌 國中：進階紅石電路、程式設計</li>
+                    <li>📌 高中：更深入的編程、環境教育</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>🔬 STEAM 教育機構</h3>
+                <ul>
+                    <li>📌 程式設計（Python、MakeCode）</li>
+                    <li>📌 數學與邏輯思維</li>
+                    <li>📌 科學與實驗（模擬物理機制）</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>🏢 企業內訓 / 團隊建設</h3>
+                <ul>
+                    <li>📌 創意思考訓練</li>
+                    <li>📌 團隊合作挑戰</li>
+                    <li>📌 問題解決能力</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>👨‍👩‍👧‍👦 親子學習</h3>
+                <ul>
+                    <li>📌 親子合作建築</li>
+                    <li>📌 創意發展（數位積木）</li>
+                    <li>📌 遊戲中學習程式與邏輯</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>🏡 社區 & 圖書館</h3>
+                <ul>
+                    <li>📌 數位學習（Minecraft 入門）</li>
+                    <li>📌 社區共創計畫</li>
+                    <li>📌 Minecraft 活動與工作坊</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>🎯 特色教學內容</h3>
+                <ul>
+                    <li>✅ 跨學科教學（數學、科學、地理）</li>
+                    <li>✅ 專題式學習（生態保護、程式設計）</li>
+                    <li>✅ 多人合作（團隊建築、模擬管理）</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 麥塊社團網頁 - 聯絡我們
+    </footer>
+</body>
+</html>
