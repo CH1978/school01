@@ -5,97 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>聯絡我們</title>
     <style>
-        /* 設定暖色系風格 */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #FFF3E0; /* 淡橙色背景 */
-            color: #5D4037; /* 深咖啡色文字 */
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background-color: #F1F1F1;
+            color: #333;
             margin: 0;
             padding: 0;
         }
 
-        /* 標題區 */
         header {
-            background-color: #FF9800; /* 橙色標題 */
+            background-color: #3F51B5;
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 24px;
+            font-size: 26px;
+            font-weight: bold;
         }
 
-        /* 導覽列 */
         nav {
-            background-color: #FFB74D; /* 橙黃色 */
+            background-color: #303F9F;
             text-align: center;
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
         nav a {
-            color: #5D4037;
+            color: white;
             text-decoration: none;
             font-size: 18px;
             margin: 0 15px;
             padding: 10px;
             display: inline-block;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
-            background-color: #FF7043;
-            color: white;
-            border-radius: 5px;
+            background-color: #C5CAE9;
+            color: #1A237E;
+            border-radius: 4px;
         }
 
-        /* 主要內容區 */
         section {
             max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #FFE0B2;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
-            color: #E65100;
+            color: #3F51B5;
+            border-bottom: 2px solid #C5CAE9;
+            padding-bottom: 8px;
         }
 
-        /* 讓聯絡資訊美觀 */
         ul {
             list-style-type: none;
             padding: 0;
         }
 
         ul li {
-            background-color: #FFCC80;
-            padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
+            background-color: #E8EAF6;
+            padding: 12px;
+            margin: 6px 0;
+            border-radius: 6px;
         }
 
-        /* 兩欄佈局 */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 兩欄 */
-            gap: 15px; /* 間距 */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .grid-item {
-            background-color: #FFD180;
-            padding: 15px;
-            border-radius: 8px;
+            background-color: #E3F2FD;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .grid-item h3 {
+            color: #1A237E;
         }
 
         footer {
             text-align: center;
-            background-color: #FF9800;
+            background-color: #3F51B5;
             color: white;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 12px;
+            margin-top: 30px;
         }
 
         @media (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: 1fr; /* 小螢幕變單欄 */
+            nav a {
+                display: block;
+                margin: 8px 0;
             }
         }
     </style>
@@ -103,10 +107,11 @@
 <body>
     <header>聯絡我們</header>
     <nav>
-        <a href="index.html">首頁</a>
-        <a href="gallery.html">作品展示</a>
-        <a href="learning.html">學習資源</a>
-        <a href="contact.html">聯絡我們</a>
+        <a href="index.html">🏠 首頁</a>
+        <a href="minecraft.html">🎨 作品展示</a>
+        <a href="learningMC.html">📚 麥快學習資源</a>
+        <a href="learningRO.html">📚 Roblox學習資源</a>
+        <a href="contact.html">📩 聯絡我們</a>
     </nav>
 
     <section>

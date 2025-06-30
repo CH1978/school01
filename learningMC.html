@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麥快學習資源</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0F7FA;
+            color: #004D40;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #0097A7;
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        nav {
+            background-color: #80DEEA;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 15px;
+            color: #004D40;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #00695C;
+        }
+
+        h2, h3 {
+            color: #00695C;
+        }
+
+        footer {
+            background-color: #004D40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 2px solid #0097A7;
+            border-radius: 5px;
+        }
+
+        input:focus, button:focus {
+            border-color: #004D40;
+            outline: none;
+        }
+
+        button {
+            background-color: #0097A7;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00695C;
+        }
+
+        #resources {
+            display: none;
+        }
+
+        .lesson-block {
+            background-color: #ffffff;
+            border: 2px solid #80DEEA;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #lessonButtons button {
+            margin: 5px;
+            min-width: 200px;
+        }
+
+        ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        img.lesson-image {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+    
+    <script>
+        const members = {
+
+  "吳奕霆": "129AB", "吳鈺棠": "357XZ", "林祐瑋": "842LM",
+  "陳繹安": "230KJ", "陳宣叡": "514YT", "陳岳陽": "765QR",
+  "洪辰維": "301FG", "李汶樸": "689WE", "黃秉昇": "973OP",
+  "林晉皜": "456DV", "楊子立": "712BN", "楊子正": "874CX",
+  "魏瑜萱": "120ZA", "蔡鎮憶": "638MQ", "黃樂帆": "245HU",
+  "123": "123", "王景弘": "00000", "王泫云": "00000", "王泫棠": "00000"
+
+        };
+
+        const lessons = [
+            {
+                title: "Minecraft 程式設計入門：遊戲說明",
+                description: "我們提供 Minecraft 教學和資源，讓你學習如何創建與設計。",
+                descriptionList: [
+                    '<a href="https://www.youtube.com/embed/r5VXoc8Pwss" target="_blank">Minecraft 基礎入門 - 第1課</a>',
+                    '<a href="https://www.youtube.com/embed/PA3y6PcFjp8" target="_blank">任務02 放置與打破 1140310</a>',
+                    '<a href="https://www.youtube.com/embed/oy7Zv5GM5Sw" target="_blank">任務03 互動 1140310</a>',
+                    '<a href="https://www.youtube.com/embed/kGbskqHIGNY" target="_blank">任務04 相機與個人資料 1140310</a>',
+                    '<a href="https://www.youtube.com/embed/EldgeuTmShY" target="_blank">任務05 黑板 1140310</a>',
+                    '<a href="https://www.youtube.com/embed/ulFZrAglMmE" target="_blank">任務06 NPC 1140310</a>',
+                    '學習到的相關指令：',
+                    '/time set day（白天） /time set night（晚上）',
+                    '/give @p spawn_egg 1 51（得到NPC蛋） /summon npc（招喚出NPC）',
+                    '§6村莊商人（字的顏色變化）',
+                    '/give @p bread 5（給5片麵包） /give @p iron_sword 1（給1把鐵劍）',
+                    '<a href="https://online.fliphtml5.com/jkcwq/fvff/" target="_blank">Minecraft 電子書 程式設計入門_遊戲說明</a>'
+                ],
+                code: `// 使用命令方塊給予玩家物品\ngive @p bread 5`,
+                video: "https://www.youtube.com/embed/r5VXoc8Pwss",
+                ebook: "https://online.fliphtml5.com/jkcwq/fvff/",
+                image: "images/00Minecraft/MinecraftLesson.png"
+            },
+            {
+                title: "Minecraft 教育版：麥塊史帝夫轉盤",
+                description: "學習透過 Minecraft 教育版互動素材設計角色轉盤遊戲。",
+                descriptionList: [
+                    '<a href="https://online.fliphtml5.com/jkcwq/kjco/" target="_blank">Minecraft 電子書 麥塊史帝夫轉盤</a>'
+                ],
+                code: "",
+                video: "",
+                ebook: "https://online.fliphtml5.com/jkcwq/kjco/",
+                image: "images/00Minecraft/SteveSpinner.png"
+            },
+            {
+                title: "Minecraft 教育版：機器系列_飛機",
+                description: "透過三部影片學習飛機模型的設計、程式與應用，並搭配電子書進行延伸操作。",
+                descriptionList: [
+                    '<a href="https://www.youtube.com/embed/NmU9UQCpaQg" target="_blank">影片01_基本架構</a>',
+                    '<a href="https://www.youtube.com/embed/qNewi1DIsDY" target="_blank">影片02_程式介紹</a>',
+                    '<a href="https://www.youtube.com/embed/F_HCj3TVH4o" target="_blank">影片03_啟動與應用</a>'
+                ],
+                code: "",
+                video: "https://www.youtube.com/embed/NmU9UQCpaQg",
+                ebook: "https://www.calameo.com/read/007925102a2ffe4c86867",
+                image: "images/00Minecraft/AirplaneSeries.png"
+            },
+            {
+                title: "Minecraft 教育版：爆米花販賣部",
+                description: "從定位、材料準備、機構設計到外觀修飾，全面建構爆米花主題小店。",
+                descriptionList: [
+                    '<a href="https://www.youtube.com/embed/kayAsXNXwnI" target="_blank">01_定位</a>',
+                    '<a href="https://www.youtube.com/embed/2ulroKRy4rM" target="_blank">02_原料01</a>',
+                    '<a href="https://www.youtube.com/embed/BteWMfwhLGc" target="_blank">02_原料02</a>',
+                    '<a href="https://www.youtube.com/embed/J5EWVhQxo90" target="_blank">03_機體01</a>',
+                    '<a href="https://www.youtube.com/embed/rjgV6qJGZg4" target="_blank">03_機體02</a>',
+                    '<a href="https://www.youtube.com/embed/dnU5nZ-8WTE" target="_blank">04_遮陽</a>',
+                    '<a href="https://www.youtube.com/embed/He6s7rJj6bw" target="_blank">05_走道頭尾</a>'
+                ],
+                code: "",
+                video: "https://www.youtube.com/embed/kayAsXNXwnI",
+                ebook: "https://online.fliphtml5.com/jkcwq/scek/",
+                image: "images/00Minecraft/PopcornShop.png"
+            }
+        ];
+
+        function validateUser() {
+            const name = document.getElementById("name").value.trim();
+            const code = document.getElementById("code").value.trim();
+            if (members[name] && members[name] === code) {
+                document.getElementById("resources").style.display = "block";
+                document.getElementById("loginForm").style.display = "none";
+                setupLessonButtons();
+                showLesson(0);
+            } else {
+                alert("姓名或代碼錯誤，請重新輸入");
+            }
+        }
+
+        function setupLessonButtons() {
+            const buttonsDiv = document.getElementById("lessonButtons");
+            buttonsDiv.innerHTML = "";
+            lessons.forEach((lesson, i) => {
+                const btn = document.createElement("button");
+                btn.textContent = lesson.title;
+                btn.onclick = () => showLesson(i);
+                buttonsDiv.appendChild(btn);
+            });
+        }
+
+        function showLesson(index) {
+            const lesson = lessons[index];
+            const lessonContent = document.getElementById("lessonContent");
+            lessonContent.innerHTML = `
+                <h3>${lesson.title}</h3>
+                <p>${lesson.description}</p>
+                <ul>${lesson.descriptionList.map(item => `<li>${item}</li>`).join("")}</ul>
+                ${lesson.code ? `<h4>範例程式碼</h4><pre>${lesson.code}</pre>` : ""}
+                ${lesson.video ? `<h4>影片資源</h4><iframe width="100%" height="315" src="${lesson.video}" frameborder="0" allowfullscreen></iframe>` : ""}
+                ${lesson.ebook ? `<h4>電子書</h4><a href="${lesson.ebook}" target="_blank">點我閱讀</a>` : ""}
+                ${lesson.image ? `<img class="lesson-image" src="${lesson.image}" alt="課程圖片">` : ""}
+            `;
+        }
+    </script>
+</head>
+<body>
+    <header>
+<!-- <img src="images/00Roblox/RobloxPart.png" alt="麥快標誌"> -->
+        麥快學習資源
+    </header>
+    <nav>
+        <a href="index.html">🏠 首頁</a>
+        <a href="minecraft.html">🎨 作品展示</a>
+        <a href="learningMC.html">📚 麥快學習資源</a>
+        <a href="learningRO.html">📚 Roblox學習資源</a>
+        <a href="contact.html">📩 聯絡我們</a>
+    </nav>
+
+    <div class="container">
+        <section id="loginForm">
+            <h2>請輸入姓名與代碼</h2>
+            <form onsubmit="event.preventDefault(); validateUser();">
+                <label for="name">姓名：</label><br>
+                <input type="text" id="name" required><br><br>
+                <label for="code">代碼：</label><br>
+                <input type="text" id="code" required><br><br>
+                <button type="submit">確認</button>
+            </form>
+        </section>
+
+        <section id="resources">
+            <h2>主題學習資源列表</h2>
+            <div id="lessonButtons"></div>
+            <div id="lessonContent" class="lesson-block"></div>
+        </section>
+    </div>
+    <footer>&copy; 2025 麥塊社團 | 版權所有</footer>
+</body>
+</html>

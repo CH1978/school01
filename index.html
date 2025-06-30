@@ -1,231 +1,189 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>僑仁國小麥塊社團</title>
     <style>
         body {
             font-family: 'Noto Serif TC', serif;
-            background-color: #FFF3E0; /* 奶油黃背景 */
-            color: #5D4037; /* 深棕色字體 */
+            background-color: #FFFFFF;
+            color: #3B3F66;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
+
         header {
-            background-color: #FF7043; /* 溫暖的橘紅色 */
-            padding: 30px;
+            background: linear-gradient(90deg, #4B6CB7, #182848);
+            padding: 30px 15px;
             text-align: center;
             font-size: 36px;
-            color: #FFF;
-            font-weight: bold;
+            color: #F0F4FF;
+            font-weight: 700;
             letter-spacing: 3px;
+            box-shadow: 0 2px 6px rgba(27, 34, 64, 0.4);
         }
+
         nav {
-            background-color: #FFAB91; /* 杏桃色 */
-            padding: 15px;
+            background-color: #5A6FA8;
+            padding: 15px 10px;
             text-align: center;
         }
         nav a {
-            margin: 0 20px;
-            color: #5D4037;
+            margin: 0 15px;
+            color: #E1E6F9;
             text-decoration: none;
             font-size: 18px;
-            font-weight: bold;
-            transition: color 0.3s, background-color 0.3s;
-            padding: 10px 15px;
-            border-radius: 5px;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
         }
-        nav a:hover {
-            color: white;
-            background-color: #FF7043; /* 橘紅色 */
+        nav a:hover,
+        nav a:focus {
+            background-color: #394A8C;
+            color: #FFFFFF;
+            outline: none;
         }
+
         section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 0 15px;
             text-align: center;
         }
-        h2, h3 {
-            font-family: 'Noto Serif TC', serif;
-            font-weight: bold;
-            color: #D84315; /* 深橘色 */
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #6D4C41;
-            margin: 20px 0;
+
+        h2 {
+            color: #2E3A87;
         }
 
-        .features {
-            list-style: none;
-            padding: 0;
-        }
-        .features li {
-            background: #e0f7fa;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        
-        /* 表單 */
         form {
-            background-color: #FFCCBC; /* 淡粉橘色 */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            width: 100%;
+            background-color: #F2F5FF;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(70, 78, 158, 0.25);
             max-width: 400px;
-            margin-top: 30px;
+            margin: 30px auto 0;
+            text-align: left;
         }
+
+        select,
         input[type="text"] {
             width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #FF7043;
-            border-radius: 5px;
+            padding: 14px 12px;
+            margin: 10px 0 20px 0;
+            border: 2px solid #5A6FA8;
+            border-radius: 6px;
             font-size: 16px;
-            color: #5D4037;
-            background-color: #FFF8E1; /* 淡奶油色 */
+            color: #2B2E4A;
+            background-color: #FFFFFF;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
         }
+
+        select:focus,
+        input[type="text"]:focus {
+            border-color: #394A8C;
+            outline: none;
+        }
+
         button {
             width: 100%;
-            padding: 12px;
-            background-color: #FF7043; /* 橘紅色 */
+            padding: 14px;
+            background-color: #394A8C;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 18px;
             color: white;
+            font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
-        button:hover {
-            background-color: #E64A19; /* 更深的橘紅色 */
+
+        button:hover,
+        button:focus {
+            background-color: #2E367A;
+            outline: none;
         }
 
         .result-section {
-            margin-top: 30px;
+            margin-top: 25px;
             display: none;
-        }
-        .result-section p {
+            background-color: #E6EBFA;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(65, 72, 145, 0.2);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            color: #2B3270;
             font-size: 18px;
-            color: #FF7043;
         }
 
+        .result-section p {
+            margin: 8px 0;
+            font-weight: 600;
+        }
 
+        .login-guide .guide-wrapper {
+            background-color: #F2F5FF;
+            padding: 25px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(70, 78, 158, 0.25);
+            max-width: 400px;
+            margin: 40px auto;
+            text-align: left;
+        }
 
-        /* 影片區塊 */
-        .video-section {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .video-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        .video-item {
-            background-color: #FFCCBC; /* 淡橘紅色 */
-            border: 1px solid #FF7043;
-            padding: 15px;
-            width: 45%;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .video-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-        .video-item iframe {
+        .login-guide img {
             width: 100%;
-            height: 180px;
+            height: auto;
             border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin: 20px 0;
         }
-        .video-item p {
+
+        .login-guide p,
+        .login-guide ol {
             font-size: 16px;
-            color: #5D4037;
-            margin-top: 10px;
+            color: #333;
+            margin-bottom: 20px;
         }
-        /* 底部 */
+
         footer {
-            background-color: #FFAB91;
-            padding: 30px;
+            background-color: #394A8C;
+            padding: 30px 15px;
             text-align: center;
-            color: white;
+            color: #E1E6F9;
             font-size: 14px;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
         }
     </style>
 </head>
 <body>
-    <header>🍊 麥塊社團首頁 🍊</header>
+    <header>🍊 社團帳號查詢 🍊</header>
+
     <nav>
         <a href="index.html">🏠 首頁</a>
-        <a href="gallery.html">🎨 作品展示</a>
-        <a href="learning.html">📚 學習資源</a>
+        <a href="minecraft.html">🎨 作品展示</a>
+        <a href="learningMC.html">📚 麥塊學習資源</a>
+        <a href="learningRO.html">📚 Roblox學習資源</a>
         <a href="contact.html">📩 聯絡我們</a>
     </nav>
 
     <section>
-        <h2>✨ 社團簡介 ✨</h2>
-        <p>歡迎來到《麥塊社團》，一個致力於讓所有喜愛《Minecraft》的玩家們能夠交流、學習與創作的地方！不論是新手還是老玩家，我們的社團都提供了一個友善和開放的環境，讓大家能夠分享各自的遊戲心得、創作和技巧，並一同探索無限的虛擬世界。</p>
-
-        <ul class="features">
-            <li>💻 <strong>程式學習</strong>：從基礎開始，逐步學會用程式控制遊戲！</li>
-            <li>🎨 <strong>創意發揮</strong>：打造會動的建築、設計專屬的遊戲玩法！</li>
-            <li>🤝 <strong>團隊合作</strong>：和朋友一起解謎、建造、挑戰遊戲任務！</li>
-            <li>🚀 <strong>玩中學習</strong>：讓學習程式變得像冒險一樣有趣！</li>
-        </ul>
-
-
-
-        
-        <h3>社團宗旨</h3>
-        <ul class="features">
-            <li>💻 一起學程式，變身小小程式師！
-                在這裡，我們不只會玩《Minecraft》，還會學習用程式來控制遊戲世界，讓建築會動，甚至創造新的遊戲玩法！🧑‍💻✨</li>
-            <li>🎨 發揮創意，讓程式改變世界！
-                你可以用程式設計自動門、隱藏機關，甚至打造一個會說話的 NPC（遊戲角色），讓你的創意變成現實！🚀</li>
-            <li>🤝 互相幫助，一起成長！
-                不怕出錯，因為學習程式就是不停嘗試！在這裡，你可以向同學學習，也可以教別人新技巧，大家一起變厲害！💡👬</li>
-
-        </ul>
-
-        <h3>社團特色</h3>
-        <ul class="features">
-            <li>專屬伺服器：社團成員可以進入專屬伺服器，與朋友們一起打造屬於自己的世界。</li>
-            <li>豐富的資源與指導：提供各類Minecraft相關資源，幫助每位成員快速提升技巧。</li>
-           
-        </ul>
-
-        
-    </section>
-
-     <!--
-    <section>
-        <h2>📢 最新公告與活動資訊 📢</h2>
-        <ul style="list-style-type: none; padding: 0;">
-            <li>🎉 2025 春季活動：Minecraft 創建挑戰，快來報名！</li>
-            <li>🔥 每週五晚上：Minecraft 生存挑戰賽，等你來挑戰！</li>
-            <li>💡 社團講座：Minecraft 伺服器設置教學，詳情請見活動頁面。</li>
-        </ul>
-    </section>
-    -->
-
-    <section>
-        <h2>🔑 學員帳號密碼 🔑</h2>
+        <h2>🔑 請輸入資訊查詢帳號 🔑</h2>
         <form id="loginForm">
-            <input type="text" id="name" name="name" placeholder="輸入姓名" required>
-            <input type="text" id="code" name="code" placeholder="輸入代碼" required>
+            <select id="platform" required>
+                <option value="">請選擇平台</option>
+                <option value="minecraft">Minecraft</option>
+                <option value="roblox">Roblox</option>
+            </select>
+            <input type="text" id="name" name="name" placeholder="輸入姓名" required />
+            <input type="text" id="code" name="code" placeholder="輸入代碼" required />
             <button type="submit">驗證</button>
         </form>
 
@@ -235,186 +193,107 @@
         </div>
     </section>
 
-
-
-    <!-- 
-    <section class="video-section">
-        <h3>🎥 回顧影片 🎥</h3>
-        <ul style="padding: 0; list-style-type: none;">
-            <li><a href="https://www.youtube.com/watch?v=video1" target="_blank">🎬 Minecraft 伺服器設定教學</a></li>
-            <li><a href="https://youtu.be/cRjhwoqa29o" target="_blank">🎬 霓虹燈</a></li>
-        </ul>
-    </section>
--->
-
-  
-    <!-- 成品展示 -->
+    <section class="login-guide">
+        <div class="guide-wrapper">
+            <h2>🧭 如何登入 Roblox 或 Minecraft？</h2>
     
-    <section class="video-section">
-        <h3>程式成品展示</h3>
-        <div class="video-row">
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/s50E88Mkon4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 1: 國小麥塊遊樂場</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/k2WVOeB-3do" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 2: 國小麥塊遊樂場火車版</p>
-            </div>
-    <!--
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/l4w1jRNXiDU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 3: 九尾狐建造(橘)</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/4mp-pIiA9xg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 4: 九尾狐建造(黃)</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/UnFRue5BZAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 5: 九尾狐</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/cRjhwoqa29o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 6: 霓虹燈</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/ZWY_lz8DTvA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 7: 飛天鬥牛犬建立</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/a8xi4E4kKO8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 8: 飛天鬥牛犬翱翔</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/3171E8kc3VA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 9: 鬥牛全摩天輪</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/3mkPEUEttgeI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 10: 飛進美麗學院</p>
-            </div>
-
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/lfk1_q_tOdI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 11: 狐狸屋部落</p>
-            </div>
-
+            <p>要登入 Roblox 或 Minecraft，你需要準備好自己的「平台」、「姓名」與「查詢代碼」。請依照以下步驟操作：</p>
+            <ol>
+                <li>在上方表單中選擇你要查詢的平台（Roblox 或 Minecraft）。</li>
+                <li>輸入你在報名時登記的真實姓名與查詢代碼。</li>
+                <li>按下「驗證」按鈕，即可看到你的帳號與密碼。</li>
+                <li><strong>登入時請使用正確的官方網站</strong>，不要分享帳密給他人！</li>
+            </ol>
+    
+            <img src="images/登陸操作01.jpg" alt="登入教學圖片" />
+            <img src="images/登陸操作02.jpg" alt="登入教學圖片" />
             
-            <div class="video-item">
-                <iframe src="https://www.youtube.com/embed/9StL377Mlno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <p>成品展示 12: 狐狸屋部落夜間</p>
-            </div>
-
-
+            <p style="text-align: center; font-weight: 600; color: #2E3A87;">
+                🔐 記得保護帳號安全，登入後也不要透露密碼給陌生人喔！
+            </p>
         </div>
-        -->
+
     </section>
-    
 
-<!-- 114寒假成品展示 -->
-   <!-- 
-<section class="video-section">
-    <h3>程式成品展示</h3>
-    <div class="video-row">
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ufhekx8NKkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第1組</p>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/ktFTnzdVIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第2組</p>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/DV2hMPbCitE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第3組</p>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/UuqbTiuqhns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第4組</p>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/E-F-pCmGEwc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第5組</p>
-        </div>
-
-        <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/FtgmVaT2TeY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p>成品展示第6組</p>
-        </div>
-
-
-
-        
-
-    </div>
-</section>
--->
 
 
     <footer>
         &copy; 2025 麥塊社團 | 版權所有
     </footer>
-    <script>
-        const users = [
-            { name: '吳奕霆', code: '129AB', account: 'Panda01@pandach2025.onmicrosoft.com', password: 'D^726093387125un' },
-            { name: '吳鈺棠', code: '357XZ', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'Z(774314858691al' },
-            { name: '林祐瑋', code: '842LM', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'S*805847889716ux' },
-            { name: '陳繹安', code: '230KJ', account: 'Panda04@pandach2025.onmicrosoft.com', password: 'M^483704427817ak' },
-            { name: '陳宣叡', code: '514YT', account: 'Panda05@pandach2025.onmicrosoft.com', password: 'Q@504815332874or' },
-            { name: '陳岳陽', code: '765QR', account: 'Panda06@pandach2025.onmicrosoft.com', password: 'G#275009806796od' },
-            { name: '洪辰維', code: '301FG', account: 'Panda07@pandach2025.onmicrosoft.com', password: 'Z.939081295308aj' },
-            { name: '李汶樸', code: '689WE', account: 'Panda08@pandach2025.onmicrosoft.com', password: 'T#312892561013uw' },
-            { name: '黃秉昇', code: '973OP', account: 'Panda09@pandach2025.onmicrosoft.com', password: 'Y.204680076558ah' },
-            { name: '林晉皜', code: '456DV', account: 'Panda10@pandach2025.onmicrosoft.com', password: 'S(937605301857an' },
-            { name: '楊子立', code: '712BN', account: 'Panda11@pandach2025.onmicrosoft.com', password: 'P*226093556272ag' },
-            { name: '楊子正', code: '874CX', account: 'Panda12@pandach2025.onmicrosoft.com', password: 'S(693130971915aq' },
-            { name: '魏瑜萱', code: '120ZA', account: 'Panda13@pandach2025.onmicrosoft.com', password: 'L!762446421283uw' },
-            { name: '蔡鎮憶', code: '638MQ', account: 'Panda14@pandach2025.onmicrosoft.com', password: 'Y)504606516455ax' },
-            { name: '黃樂帆', code: '245HU', account: 'Panda15@pandach2025.onmicrosoft.com', password: 'G#244120269778ut' },
-            { name: '王景弘', code: '398TS', account: 'Panda01@pandach2025.onmicrosoft.com', password: 'D^726093387125un' },
-            { name: '王泫云', code: '567VP', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'Z(774314858691al' },
-            { name: '王泫棠', code: '789JK', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'S*805847889716ux' }
-        ];
 
-        const form = document.getElementById('loginForm');
-        const resultSection = document.getElementById('resultSection');
-        const accountField = document.getElementById('account');
-        const passwordField = document.getElementById('password');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const code = document.getElementById('code').value;
-            const user = users.find(u => u.name === name && u.code === code);
-            if (user) {
-                accountField.textContent = user.account;
-                passwordField.textContent = user.password;
-                resultSection.style.display = 'block';
 
-                // 設定3分鐘後自動重置表單
-                setTimeout(() => {
-                    document.getElementById('name').value = '';
-                    document.getElementById('code').value = '';
-                    resultSection.style.display = 'none';
-                }, 180000); // 180000毫秒 = 3分鐘
-            } else {
-                alert("無效的姓名或代碼，請重新輸入！");
-            }
-        });
+   <script>
+    const users = {
+        minecraft: [
+            { name: '123', code: '123', account: 'Panda01@pandach2025.onmicrosoft.com', password: 'D.574594354091ud' },
+            { name: '王泫云', code: 'T6B3X', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'J#571287784939ot' },
+            { name: '王泫棠', code: 'E4H9R', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'D^525733745812ad' },
+            { name: '魏翊安', code: 'L9J2V', account: 'Panda01@pandach2025.onmicrosoft.com', password: 'D.574594354091ud' },
+            { name: '許博硯', code: 'T6B3X', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'J#571287784939ot' },
+            { name: '謝朋洧', code: 'E4H9R', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'D^525733745812ad' },
+            { name: '林承陽', code: 'M5Z1K', account: 'Panda04@pandach2025.onmicrosoft.com', password: 'Y(914542186178az' },
+            { name: '黃韋言兪', code: 'C2Q8Y', account: 'Panda05@pandach2025.onmicrosoft.com', password: 'S(966136430808al' },
+            { name: '彭翊真', code: 'R7D6L', account: 'Panda06@pandach2025.onmicrosoft.com', password: 'N%501508012457us' },
+            { name: '吳鈺棠', code: 'W3A5F', account: 'Panda07@pandach2025.onmicrosoft.com', password: 'K.380106269471og' },
+            { name: '馮筠哲', code: 'Y8N4M', account: 'Panda08@pandach2025.onmicrosoft.com', password: 'G%819199437966on' },
+            { name: '楊洺量', code: 'N1K7C', account: 'Panda09@pandach2025.onmicrosoft.com', password: 'T^395369044464ol' },
+            { name: '洪辰維', code: 'G9U2Z', account: 'Panda10@pandach2025.onmicrosoft.com', password: 'N^193770715442ad' },
+            { name: '吳禹秀', code: 'U4X9B', account: 'Panda11@pandach2025.onmicrosoft.com', password: 'S)129858039478uk' },
+            { name: '李汶樸', code: 'S2M8V', account: 'Panda12@pandach2025.onmicrosoft.com', password: 'K%687065174659ux' },
+            { name: '楊洺諺', code: 'X9D7Y', account: 'Panda13@pandach2025.onmicrosoft.com', password: 'Q)782011731906aw' },
+            { name: '魏瑜萱', code: 'B3W1Z', account: 'Panda14@pandach2025.onmicrosoft.com', password: 'G&732004554768ob' },
+            { name: '馮紹淮', code: 'H8F9R', account: 'Panda15@pandach2025.onmicrosoft.com', password: 'G)607697023433uc' }
+        ],
+        roblox: [
+            { name: '廖崇皓', code: 'A9T3K', account: 'TWPanda03', password: 'C5%z8p7&' },
+            { name: '陳怡安', code: 'X4R7M', account: 'TWPanda04', password: 'D1!v6q3*' },
+            { name: '方芊媚', code: 'B2L9Z', account: 'TWPanda05', password: 'E4^r0w9(' },
+            { name: '謝棠宇', code: 'H7P8D', account: 'TWPanda07', password: 'G2!h3u8_' },
+            { name: '楊子立', code: 'V3N5Q', account: 'TWPanda09', password: 'J6(k4t1=' },
+            { name: '楊子正', code: 'K8W2J', account: 'TWPanda10', password: 'K0)m5s2~' },
+            { name: '魏瑜萱', code: 'D6M1E', account: 'TWPanda13', password: 'N5=z0g6}' },
+            { name: '游祐睿', code: 'Z5C4U', account: 'TWPanda14', password: 'P1~b2c7[' },
+            { name: '楊承勳', code: 'Q3Y6A', account: 'TWPanda15', password: 'Q4@y3o8!' },
+            { name: '林宥廷', code: 'F1G7N', account: 'TWPanda16', password: 'R8{a9v0;' },
+            { name: '廖崇佑', code: 'J6E5W', account: 'TWPanda17', password: 'S2}m6k5:' },
+            { name: '楊健廷', code: 'P7L3H', account: 'TWPanda18', password: 'T9[x1n3$' },
+            { name: '廖英棋', code: 'A1C6Q', account: 'TWPanda19', password: 'U6]p8r2!' },
+            { name: '陳祈安', code: 'K5G4N', account: 'TWPanda21', password: 'A3]q6x9$' },
+            { name: '施鈞彥', code: 'Z6T2A', account: 'TWPanda23', password: 'H4!e3v7&' }
+        ]
+    };
 
-    </script>
+    const form = document.getElementById('loginForm');
+    const resultSection = document.getElementById('resultSection');
+    const accountField = document.getElementById('account');
+    const passwordField = document.getElementById('password');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const platform = document.getElementById('platform').value;
+        const name = document.getElementById('name').value.trim();
+        const code = document.getElementById('code').value.trim();
+
+        if (!platform || !users[platform]) {
+            alert('請選擇平台');
+            return;
+        }
+
+        const user = users[platform].find(u => u.name === name && u.code === code);
+        if (user) {
+            accountField.textContent = user.account;
+            passwordField.textContent = user.password;
+            resultSection.style.display = 'block';
+            setTimeout(() => {
+                resultSection.style.display = 'none';
+                form.reset();
+            }, 180000); // 3分鐘後自動隱藏
+        } else {
+            alert("無效的姓名或代碼，請重新輸入！");
+        }
+    });
+</script>
+
 </body>
 </html>

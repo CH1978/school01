@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ROBLOX 一鍵學園</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0F7FA;
+            color: #004D40;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+
+        header {
+           
+            /*
+            
+            background-image: url("images/00Roblox/RobloxPart.png");
+            background-size: cover; 
+            background-position: center; 
+            
+            */
+
+            background-color: #0097A7; 
+           
+            color: white;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            height: 60px;
+            margin-right: 10px;
+        }
+
+        nav {
+            background-color: #80DEEA;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 15px;
+            color: #004D40;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: #00695C;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            text-align: left;
+        }
+
+        h2, h3 {
+            color: #00695C;
+        }
+
+        footer {
+            background-color: #004D40;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: 2px solid #0097A7;
+            border-radius: 5px;
+        }
+
+        input:focus, button:focus {
+            border-color: #004D40;
+            outline: none;
+        }
+
+        button {
+            background-color: #0097A7;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00695C;
+        }
+
+        #resources {
+            display: none;
+        }
+
+        .lesson-block {
+            background-color: #ffffff;
+            border: 2px solid #80DEEA;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        #lessonButtons {
+            text-align: center;
+        }
+
+        #lessonButtons button {
+            margin: 5px;
+            min-width: 180px;
+        }
+
+        #lessonContent img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <script>
+        const members = {
+    "123": "123",
+    "廖崇皓": "A9T3K",
+    "陳怡安": "X4R7M",
+    "方芊媚": "B2L9Z",
+    "謝棠宇": "H7P8D",
+    "楊子立": "712BN",
+    "楊子正": "874CX",
+    "魏瑜萱": "120ZA",
+    "游祐睿": "Z5C4U",
+    "楊承勳": "Q3Y6A",
+    "林宥廷": "F1G7N",
+    "廖崇佑": "J6E5W",
+    "楊健廷": "P7L3H",
+    "廖英棋": "A1C6Q",
+    "陳祈安": "K5G4N",
+    "施鈞彥": "Z6T2A",
+    "王景弘": "00000",
+    "王泫云": "00000",
+    "王泫棠": "00000"
+        };
+
+
+        
+        const lessons = [
+            {
+                title: "CH0：安全玩 Roblox",
+                description: 
+                `
+                
+在這堂「安全玩 Roblox」的課程中，我們將帶領學生探索 Roblox 的精彩世界，
+並學會三大安全重點：認識 Roblox 是什麼、了解帳號安全與聊天禮儀，
+以及分辨哪些網路行為是安全或危險的。孩子們會發現，Roblox 不只是遊戲平台，
+更是一個能自己動手設計遊戲的創作天地！在活動中，學生將認識各種遊戲類型，
+如冒險、建設、養成與解謎，並親手打造個人角色與參與合作挑戰。接著，我們會教孩子如何安全登入帳號，
+保護密碼不外洩，也會進行互動小測驗，學會辨識假訊息與詐騙行為。在「我是安全小偵探！」活動中，
+孩子將學會判斷對話是否安全，提升他們的警覺與應對能力。最後，每位學生會製作自己的 
+Roblox 安全守則卡，寫下承諾不加陌生人、不透露個資，並與家長一起完成「親子安全約定卡」，
+建立健康有界線的遊戲習慣。透過這場學習與趣味兼具的課程，孩子將成為能玩、會創作、
+懂保護自己的 Roblox 小高手！
+                
+                `,
+    
+                descriptionList: [
+                    
+      "認識 Roblox 是什麼樣的平台",
+      "學習帳號安全與登入方法",
+      "認識網路聊天禮儀與安全對話",
+      "上課遵守原則",
+      "班級管理規則",
+      "製作 Roblox 安全守則卡與親子約定卡"
+
+                ],
+                code: `
+ -- 建立起始方塊
+local part = Instance.new("Part")
+part.Size = Vector3.new(6, 1, 6)
+part.Position = Vector3.new(0, 10, 0)
+part.Anchored = true
+part.Parent = workspace
+
+`,
+                video: "https://www.youtube.com/watch?v=JF_N0NlNifk",
+                ebook: "https://online.fliphtml5.com/jkcwq/gxrn/#p=1",
+                image: "images/00Roblox/走進 Roblox 世界.png"
+            },
+
+
+            {
+                title: "CH1：認識 Roblox 與遊戲世界",
+                description: 
+                `
+                本課程將帶領學生進入 Roblox 的遊戲世界，從登入操作開始，
+                逐步認識遊戲介面與基本控制方式。藉由體驗《Easy Rainbow Obby!》
+                這款色彩繽紛的跑酷遊戲，學生不只是在「玩」，更是透過「玩」來理解角色移動與跳躍的動作原理，
+                為日後的遊戲設計打下基礎。活動中會引導學生學會使用鍵盤（W/A/S/D 控制移動、空白鍵跳躍）與滑鼠視角操作，
+                並進行觀察任務與闖關挑戰。透過任務設計，如完成前 20 關、計時挑戰或雙人合作接力跳，培養觀察力、反應力與團隊合作精神。
+                這是一場結合「學習操作」與「理解設計」的有趣遊戲旅程！
+                
+                `,
+                
+                descriptionList: 
+                [
+                
+                "認識 Roblox 與登入教學", 
+                "進入遊戲後的基本操作訓練", 
+                "關卡設計類型與學習目標",
+                "常見技術問題與解決方案",
+                "https://www.roblox.com/games/7427929301/Easy-Parkour-Obby"
+                
+                ],
+                
+                
+                code: 
+                `
+-- 建立2 個方塊 (看看有什麼不一樣)
+
+-- 建立第 1 個方塊
+local part1 = Instance.new("Part")               -- 建立第一個方塊
+part1.Size = Vector3.new(6, 1, 6)                -- 設定大小（寬6、高1、深6）
+part1.Position = Vector3.new(0, 10, 0)           -- 位置：X=0，Y=10（高度固定），Z=0
+part1.Anchored = true                            -- 固定住，不會掉下去
+part1.BrickColor = BrickColor.Random()           -- 給隨機顏色
+part1.Parent = workspace                         -- 放進地圖
+
+-- 建立第 2 個方塊
+local part2 = Instance.new("Part")               -- 建立第二個方塊
+part2.Size = Vector3.new(6, 1, 6)                -- 大小一樣
+part2.Position = Vector3.new(6, 10, 0)           -- X=6（往前 6 格），Y=10（高度一樣），Z=0
+part2.Anchored = true                            -- 一樣固定
+part2.BrickColor = BrickColor.Random()           -- 隨機顏色
+part2.Parent = workspace                         -- 放進地圖
+
+`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/jkcwq/edst/#p=1",
+                image: "images/00Roblox/認識 Roblox 與遊戲世界.jpg"
+            },
+
+
+
+
+            {
+                title: "CH2：認識RobloxStudio",
+                description: 
+                `
+                本活動將引導學生動手建立遊戲中的基本物件，學習如何使用 Roblox Studio 的核心工具進行物件操作。
+                學生將從新增一個簡單的 Part（方塊）開始，透過工具列中的「Move（移動）」、
+                「Scale（縮放）」等功能，調整物件在 3D 視窗中的位置與大小。
+                接著，學生將練習更改物件的顏色、材質與名稱，理解物件的屬性設定與編輯方式。
+                透過這些操作，學生不僅學會空間控制與視覺表達，更能初步建立「每個物件都有屬性、可以被改變」的概念。
+                這是後續學習遊戲設計與腳本編程的重要基礎。活動設計也強調讓學生透過視覺化操作，建立清晰的創作流程，提升動手能力與創造力。
+                
+                `,
+                
+                descriptionList: [
+                    "Studio 主要視窗功能介紹", 
+                    "工具欄操作說明",
+                    "模板選擇與專案開啟",
+                    "3D 視窗與相機控制",
+                    "物件建立與管理",
+                    "Toolbox 使用教學"
+                
+                ],
+                code: 
+                `
+                
+-- 建立3 個方塊有什麼不一樣
+
+-- 建立第 1 個方塊
+local part1 = Instance.new("Part")               -- 建立第一個方塊
+part1.Size = Vector3.new(6, 1, 6)                -- 設定大小：6x1x6
+part1.Position = Vector3.new(0, 10, 0)           -- X=0，Y=10（高度），Z=0
+part1.Anchored = true                            -- 固定不會掉下去
+part1.BrickColor = BrickColor.Random()           -- 給它隨機顏色
+part1.Parent = workspace                         -- 放到地圖裡
+
+-- 建立第 2 個方塊
+local part2 = Instance.new("Part")               -- 建立第二個方塊
+part2.Size = Vector3.new(6, 1, 6)                -- 大小一樣
+part2.Position = Vector3.new(6, 10, 0)           -- X=6（往右一格），Y=10，Z=0
+part2.Anchored = true
+part2.BrickColor = BrickColor.Random()
+part2.Parent = workspace
+
+-- 建立第 3 個方塊
+local part3 = Instance.new("Part")               -- 建立第三個方塊
+part3.Size = Vector3.new(6, 1, 6)                -- 一樣的大小
+part3.Position = Vector3.new(12, 10, 0)          -- X=12（再往右），Y=10，Z=0
+part3.Anchored = true
+part3.BrickColor = BrickColor.Random()
+part3.Parent = workspace
+
+`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/jkcwq/cmqc/#p=1",
+                image: "images/00Roblox/RobloxStudio .png"
+            },
+
+
+
+            
+
+            {
+                title: "CH3：Roblox Part",
+                description: 
+                `
+                從零開始認識 Roblox Studio 中的「零件（Part）」概念與操作方式。內容涵蓋什麼是 Part、
+                有哪些基本形狀（方塊、球體、圓柱、楔子等），以及如何插入、選擇與組合零件。
+                教材也說明零件的物理特性，例如重力、碰撞與透明度，並深入介紹常見屬性如 Anchored、CanCollide、Transparency 的功能與用途。
+                此外，還介紹特殊零件插入方法（如 SpawnLocation、TrussPart）、
+                如何透過屬性欄調整顏色與材質（RGB、Material），以及如何進行移動、縮放、旋轉等建模操作。
+                教材設計搭配任務活動與生活化比喻，幫助學生透過實作與觀察理解抽象概念，
+                是一份兼具趣味性與實用性的 Roblox 入門教學素材。
+                
+                `,
+                
+                descriptionList: 
+                [
+                "什麼是 Part？",
+                "基本形狀介紹",
+                "插入零件的方法",
+                "常見操作技能",
+                "顏色與材質設定", 
+                "三大常用屬性",
+                "屬性操作小知識"
+                ],
+                code: `
+                
+-- 建立5 個方塊 (好長喔~~改怎辦?)
+local part1 = Instance.new("Part")               -- 建立第1塊方塊
+part1.Size = Vector3.new(6, 1, 6)                -- 大小：寬6、高1、深6
+part1.Position = Vector3.new(0, 10, 0)           -- 位置：X=0（起點），Y=10，Z=0
+part1.Anchored = true
+part1.BrickColor = BrickColor.Random()
+part1.Parent = workspace
+
+-- 建立第 2 個方塊
+local part2 = Instance.new("Part")
+part2.Size = Vector3.new(6, 1, 6)
+part2.Position = Vector3.new(6, 10, 0)           -- X往右移6格
+part2.Anchored = true
+part2.BrickColor = BrickColor.Random()
+part2.Parent = workspace
+
+-- 建立第 3 個方塊
+local part3 = Instance.new("Part")
+part3.Size = Vector3.new(6, 1, 6)
+part3.Position = Vector3.new(12, 10, 0)          -- 再往右移6格（總共12）
+part3.Anchored = true
+part3.BrickColor = BrickColor.Random()
+part3.Parent = workspace
+
+-- 建立第 4 個方塊
+local part4 = Instance.new("Part")
+part4.Size = Vector3.new(6, 1, 6)
+part4.Position = Vector3.new(18, 10, 0)          -- X=18（繼續向右排）
+part4.Anchored = true
+part4.BrickColor = BrickColor.Random()
+part4.Parent = workspace
+
+-- 建立第 5 個方塊
+local part5 = Instance.new("Part")
+part5.Size = Vector3.new(6, 1, 6)
+part5.Position = Vector3.new(24, 10, 0)          -- X=24（最後一個）
+part5.Anchored = true
+part5.BrickColor = BrickColor.Random()
+part5.Parent = workspace
+
+-- 用 for 迴圈建立 5 個方塊，往右排成一列
+for i = 0, 4 do
+    local part = Instance.new("Part")                   -- 建立一個新的方塊
+    part.Size = Vector3.new(6, 1, 6)                    -- 設定大小：6x1x6
+    part.Position = Vector3.new(i * 6, 10, 0)           -- X 每次加 6，Y=10 高度固定，Z=0
+    part.Anchored = true                                -- 固定不掉下去
+    part.BrickColor = BrickColor.Random()               -- 給方塊隨機顏色
+    part.Parent = workspace                             -- 放進 3D 世界中
+end
+                
+-- 建立5 個方塊
+
+-- 用 for 迴圈建立 5 個方塊，往右排成一列
+for i = 0, 4 do
+    local part = Instance.new("Part")                   -- 建立一個新的方塊
+    part.Size = Vector3.new(6, 1, 6)                    -- 設定大小：6x1x6
+    part.Position = Vector3.new(i * 6, 10, 0)           -- X 每次加 6，Y=10 高度固定，Z=0
+    part.Anchored = true                                -- 固定不掉下去
+    part.BrickColor = BrickColor.Random()               -- 給方塊隨機顏色
+    part.Parent = workspace                             -- 放進 3D 世界中
+end
+
+
+`,
+
+
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/jkcwq/hkym/#p=1",
+                image: "images/00Roblox/RobloxPart.png"
+            },
+
+
+            {
+                title: "程式1：我的第一個Obby",
+                description: 
+                `
+這是一份給初學者的 Roblox 程式練習教材，
+目標是學會如何用 for 迴圈快速建立多個方塊（Part），
+並讓它們排列整齊、有不同顏色。
+學生將學習設定方塊的大小（Size）、位置（Position）、
+顏色（BrickColor）與固定不動（Anchored），
+建立出像「彩色列車」一樣的 Obby 障礙。
+課程中也介紹了 BrickColor 的六種顏色設定方法，
+從簡單的顏色名稱到進階的 RGB 色碼轉換，
+讓孩子了解程式如何控制物件外觀。
+最後提供小挑戰，鼓勵學生動手改變排列方向、
+顏色或大小，提升創造力與觀察力，
+是進入 Roblox 建模與腳本設計的第一步！
+                
+                `,
+                
+                descriptionList: 
+                [
+                    "基礎目標:會用 for 迴圈一次建立多個物件", 
+                    "核心概念:使用 Instance.new(Part) 建立方塊",
+                    "屬性教學:Size, Position, Anchored, BrickColor",
+                    "位置安排:利用 i * 數字 控制座標變化（排隊效果）",
+                    "顏色應用:認識 BrickColor 的 6 種設定方式", 
+                    "小挑戰練習:改成垂直排列、同色、大小漸變", 
+                    "延伸知識:BrickColor.new vs Color3.fromRGB 比較", 
+                    "工程實作:完整範例程式碼與中文註解，易於教學與模仿"
+                ],
+                code: 
+                `
+-- 我們要做一列 10 顆方塊，排成一直線
+for i = 1, 10 do
+    -- 建立一個新的方塊（Part）
+    local block = Instance.new("Part")
+    -- 設定這個方塊的大小（長4，寬1，高4）
+    block.Size = Vector3.new(4, 1, 4)
+    -- 設定方塊的位置，讓它們依照 i 排列
+    -- 每顆 X 軸往右 6 格，Y 軸是高度 5，Z 固定為 0
+    block.Position = Vector3.new(i * 6, 5, 0)
+    -- 設定方塊固定住，不會掉下來
+    block.Anchored = true
+    -- 設定方塊的顏色為隨機顏色
+    block.BrickColor = BrickColor.Random()
+    -- 把方塊放到世界裡（畫面上）
+    block.Parent = workspace
+end
+         
+                `,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/jkcwq/hdod/#p=1",
+                image: "images/00Roblox/RobloxPart.png"
+            },
+
+
+
+
+            {
+                title: "程式2：不同形狀Obby_Part01",
+                description: 
+                `
+                從零開始認識 Roblox Studio 中的「零件（Part）」概念與操作方式。內容涵蓋什麼是 Part、
+                有哪些基本形狀（方塊、球體、圓柱、楔子等），以及如何插入、選擇與組合零件。
+                教材也說明零件的物理特性，例如重力、碰撞與透明度，並深入介紹常見屬性如 Anchored、CanCollide、Transparency 的功能與用途。
+                此外，還介紹特殊零件插入方法（如 SpawnLocation、TrussPart）、
+                如何透過屬性欄調整顏色與材質（RGB、Material），以及如何進行移動、縮放、旋轉等建模操作。
+                教材設計搭配任務活動與生活化比喻，幫助學生透過實作與觀察理解抽象概念，
+                是一份兼具趣味性與實用性的 Roblox 入門教學素材。
+                
+                `,
+                
+                descriptionList: ["內容一", "內容二", "內容三"],
+                code: 
+                `
+-- 🧱 建立一個形狀表（存放各種方塊大小）
+local shapes = {
+    Vector3.new(4,1,4), -- 扁方塊：寬4、高1、深4（像一個薄地板）
+    Vector3.new(2,6,2), -- 柱狀：細長型，像一根柱子
+    Vector3.new(6,1,2), -- 長方形：寬6、高1、深2（像一個長平台）
+    Vector3.new(3,3,3), -- 正方形：立方體，三邊一樣長
+    Vector3.new(5,2,5)  -- 中型跳台：比扁方塊高一些，可以當跳台
+}
+
+-- 🔁 用迴圈依序建立每一個形狀的方塊
+for i = 1, #shapes do
+    local part = Instance.new("Part")         -- 🧱 建立一個新的方塊（Part）
+    part.Size = shapes[i]                     -- 📏 設定方塊的大小為 shapes 清單裡的第 i 個
+    part.Position = Vector3.new(i * 8, 5, 0)  -- 📍 設定方塊位置：每個往右間隔 8 格、高度為 5
+    part.Anchored = true                      -- 📌 鎖定方塊，不會掉下來
+    part.BrickColor = BrickColor.Random()     -- 🎨 隨機顏色，讓每個方塊不一樣
+    part.Parent = workspace                   -- ➕ 把方塊加入 3D 世界（Workspace）
+end
+`,
+
+
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/example/jump",
+                image: "images/00Roblox/不同形狀Obby_Part01.png"
+            },
+
+
+
+            {
+                title: "程式3：不同形狀Obby_Part02",
+                description: 
+                `
+                從零開始認識 Roblox Studio 中的「零件（Part）」概念與操作方式。內容涵蓋什麼是 Part、
+                有哪些基本形狀（方塊、球體、圓柱、楔子等），以及如何插入、選擇與組合零件。
+                教材也說明零件的物理特性，例如重力、碰撞與透明度，並深入介紹常見屬性如 Anchored、CanCollide、Transparency 的功能與用途。
+                此外，還介紹特殊零件插入方法（如 SpawnLocation、TrussPart）、
+                如何透過屬性欄調整顏色與材質（RGB、Material），以及如何進行移動、縮放、旋轉等建模操作。
+                教材設計搭配任務活動與生活化比喻，幫助學生透過實作與觀察理解抽象概念，
+                是一份兼具趣味性與實用性的 Roblox 入門教學素材。
+                
+                `,
+                
+                descriptionList: 
+                [
+                    "認識 Roblox 中常見的 4 種形狀：方塊、球體、圓柱、斜坡。", 
+                    "使用 Shape 屬性控制方塊的外型。",
+                    "透過 Vector3.new(x, y, z) 設定物件的大小。",
+                    "利用 Position 放置物件位置，建立跳台排列。",
+                    "使用陣列 {Block, Ball, ...} 儲存多個形狀資料。",
+                    "使用 for 迴圈建立一排不同形狀的障礙物。",
+                    "搭配 BrickColor.Random() 讓每個平台顏色隨機。", 
+                    "練習加入創意變化：改變高度、加貼圖、做會動的平台。"
+                ],
+                code: 
+                `
+-- 🧱 建立不同形狀的平台清單（Block、Ball、Cylinder、Wedge）
+local shapes = {"Block", "Ball", "Cylinder", "Wedge"}
+
+-- 🔁 用迴圈建立每一個形狀的方塊
+for i = 1, #shapes do
+    local part = Instance.new("Part")           -- 🧱 建立一個新的 Part（基本零件）
+    part.Shape = shapes[i]                      -- 🔺 設定形狀（方塊、球體、圓柱、斜坡）
+    part.Size = Vector3.new(4, 2, 4)            -- 📏 設定大小（寬4、高2、深4）
+    part.Position = Vector3.new(i * 8, 5, 0)    -- 📍 設定位置：每個往右間隔 8 格，高度為 5
+    part.Anchored = true                        -- 📌 鎖定不動，避免掉落
+    part.BrickColor = BrickColor.Random()       -- 🎨 隨機顏色，讓每個方塊不一樣
+    part.Parent = workspace                     -- ➕ 把方塊加到遊戲世界中（Workspace）
+end
+
+`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://book.yunzhan365.com/fhreb/jitm/mobile/index.html",
+                image: "images/00Roblox/不同形狀Obby_Part02.png"
+            },
+
+
+
+            {
+                title: "程式4：不同材質Obby",
+                description: 
+                `
+在這堂課中，學生將透過 Roblox Studio 學習如何使用程式建立不同材質的 Obby 障礙方塊。
+每一種材質（如木頭、冰、金屬、霓虹等）都有不同的外觀與物理感受，能讓遊戲更真實、更有趣。
+學生將學會用 Enum.Material 指定方塊的材質，並用 BrickColor 調整顏色，搭配 Vector3 位置與 Anchored 屬性，
+設計出一系列不同風格的跳躍平台。透過 for 迴圈與表（table）方式建立多個方塊，孩子能理解如何有效率地控制多個物件。
+課程最後也設計了小挑戰任務，鼓勵學生使用滑溜的冰塊或發光霓虹設計陷阱與創意地圖，培養邏輯、創造力與對物理效果的觀察力。
+這是一堂融合美感設計、程式邏輯與遊戲思維的實作課程。
+                
+                `,
+                
+                descriptionList:
+                 [
+                    "程式觀念	使用 table 陣列、for 迴圈重複建立方塊、設定物件屬性（Material、Size、Position）。", 
+                    "美感設計	認識材質樣貌與顏色搭配，如金屬 + 黑、冰塊 + 白、草地 + 綠等。", 
+                    "遊戲應用	材質會影響滑不滑、硬不硬，讓 Obby 更有挑戰性。",
+                    "程式語法	block.Material = Enum.Material.XXX、BrickColor.new()、Vector3.new(x, y, z)。",  
+                    "創意挑戰	設計陷阱平台、搭配火山泥地板、製作自己的材質圖卡。"
+                
+                ],
+                code: 
+
+                `
+--------------------------------------------------------------------                
+--範例01：
+local block = Instance.new("Part")         -- 建立一個新方塊
+block.Size = Vector3.new(5, 1, 5)          -- 設定方塊大小
+block.Anchored = true                      -- 固定方塊不會掉
+block.Position = Vector3.new(0, 5, 0)      -- 放在畫面中間
+block.Material = Enum.Material.Wood        -- 把材質變成木頭
+block.BrickColor = BrickColor.new("Reddish brown")  -- 顏色也改成木頭色
+block.Parent = workspace                   -- 放進遊戲畫面
+--------------------------------------------------------------------
+
+--------------------------------------------------------------------
+--範例02
+local materials = {
+    Enum.Material.SmoothPlastic, -- 光滑塑膠材質（最常見的方塊）
+    Enum.Material.Wood,          -- 木頭材質（像積木一樣）
+    Enum.Material.Metal,         -- 金屬材質（會亮亮的）
+    Enum.Material.Ice,           -- 冰的材質（會滑滑的）
+    Enum.Material.Grass          -- 草地材質（毛毛的，看起來像草）
+}
+
+-- 用迴圈跑每一種材質
+for i = 1, #materials do
+    -- 建立一個新的方塊（Part）
+    local part = Instance.new("Part")
+
+    -- 設定方塊的大小，寬 6、厚 1、高 6（適合拿來踩）
+    part.Size = Vector3.new(6, 1, 6)
+
+    -- 設定方塊的位置：X 軸間隔 8 格，Y 軸放在高 5 的地方
+    part.Position = Vector3.new(i * 8, 5, 0)
+
+    -- 固定住這個方塊，不讓它掉下去或移動
+    part.Anchored = true
+
+    -- 設定這個方塊的材質，從 materials 清單中選出第 i 個
+    part.Material = materials[i]
+
+    -- 隨機給這個方塊一個顏色，讓畫面更繽紛
+    part.BrickColor = BrickColor.Random()
+
+    -- 把這個方塊放進 Workspace，讓它出現在地圖上
+    part.Parent = workspace
+end
+-------------------------------------------------------------------- 
+--------------------------------------------------------------------
+
+-- 📦 範例03：依不同材質與顏色建立 6 種跑酷平台
+
+for i = 1, 6 do  -- 🔁 用迴圈跑 6 次，代表會建立 6 個不同的方塊
+    -- 🧱 建立新的方塊（Part）
+    local block = Instance.new("Part")
+    
+    -- 📌 固定方塊不會掉下去（讓它不受重力影響）
+    block.Anchored = true
+    
+    -- 📏 設定方塊的大小：寬5、高1、深5（像跳台）
+    block.Size = Vector3.new(5, 1, 5)
+    
+    -- 📍 設定方塊的位置：依照 i 值讓每個方塊在 X 軸上間隔 7 格，高度 Y 為 5
+    block.Position = Vector3.new(i * 7, 5, 0)
+    
+    -- 🎨 根據 i 的數字，決定材質與顏色
+    if i == 1 then
+        block.Material = Enum.Material.Plastic      -- 塑膠材質
+        block.BrickColor = BrickColor.new("Bright yellow")  -- 亮黃色
+    elseif i == 2 then
+        block.Material = Enum.Material.Wood         -- 木頭材質
+        block.BrickColor = BrickColor.new("Reddish brown") -- 棕紅色
+    elseif i == 3 then
+        block.Material = Enum.Material.Metal        -- 金屬材質
+        block.BrickColor = BrickColor.new("Really black")  -- 深黑色
+    elseif i == 4 then
+        block.Material = Enum.Material.Neon         -- 霓虹材質（發光）
+        block.BrickColor = BrickColor.new("Bright blue")   -- 亮藍色
+    elseif i == 5 then
+        block.Material = Enum.Material.Glass        -- 玻璃材質（透明）
+        block.BrickColor = BrickColor.new("Institutional white") -- 白色（玻璃外觀）
+        block.Transparency = 0.5                    -- 設定為半透明
+    elseif i == 6 then
+        block.Material = Enum.Material.Concrete     -- 水泥材質
+        block.BrickColor = BrickColor.new("Medium stone grey")  -- 淺灰色
+    end
+    
+    -- ➕ 把方塊加入 3D 世界中（才能顯示在地圖上）
+    block.Parent = workspace
+end
+--------------------------------------------------------------------
+
+`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://heyzine.com/flip-book/0e7780fa76.html",
+                image: "images/00Roblox/不同材質Obby.png"
+            },
+
+
+
+            {
+                title: "程式5：樓梯方塊Obby",
+                description: 
+                `
+在這個任務中，我們將運用 Lua 程式設計，
+在 Roblox Studio 中打造一個「會往上升」的樓梯方塊障礙賽（Obby）！
+玩家將會一步步踩著樓梯往上跳，通過跳台、直線跑道、再跳台，
+最後還要挑戰「下降樓梯」才能完成關卡！我們會透過 for 迴圈重複建立方塊，
+並利用 Vector3 同時改變方塊的 X、Y、Z 軸位置，讓樓梯自動生成，
+而且每個方塊都會有隨機顏色和材質，畫面繽紛又有趣！
+這個任務不只能學到 3D 座標的變化與排列規律，
+還能理解數學與程式的結合技巧。玩家也可以挑戰加碼任務，
+例如做「左邊樓梯」、「彩虹階梯」、「跳高障礙」或「透明障礙」等，
+創造出自己的酷炫關卡！快來發揮創意，用程式打造屬於你的方塊世界吧！
+                
+                `,
+                
+                descriptionList: 
+                [
+                    "學習使用 for 迴圈：自動重複建立多個方塊，省時又有效率。", 
+                    "理解 3D 座標變化：透過 Vector3.new(X, Y, Z) 同時調整方塊位置。", 
+                    "建立樓梯形排列規律：每階 X 軸增加、Y 軸上升，做出會升高的階梯。", 
+                    "運用數學與程式邏輯：體會位置變化與數字關係（如 i*6、i*2）。", 
+                    "加強創意設計能力：挑戰不同樓梯型態（左邊、跳高、透明、彩虹等）。", 
+                    "實作有趣 Obby 地圖：建立可玩的跑酷場景，結合學習與遊戲樂趣。"
+                ],
+                
+                code:
+                 `
+-- 建立 10 階樓梯，每階會往右並往上
+for i = 1, 10 do
+    local part = Instance.new("Part")                     -- 建立一個方塊
+    part.Size = Vector3.new(6, 1, 6)                      -- 設定大小：6x1x6
+    part.Position = Vector3.new(i * 6, i * 2, 0)          -- 同時改變 X 和 Y：像樓梯一樣往上升
+    part.Anchored = true                                 -- 固定不移動
+    part.BrickColor = BrickColor.Random()                -- 給方塊隨機顏色
+    part.Material = Enum.Material.SmoothPlastic          -- 設定材質
+    part.Parent = workspace                              -- 放到 3D 世界中
+end
+
+`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://heyzine.com/flip-book/35fb810413.html",
+                image: "images/00Roblox/樓梯方塊向上升.png"
+            },
+
+
+
+            {
+                title: "程式6：Roblox 裡跑酷死亡重生怎麼做？",
+                description: 
+                `
+當你在 Roblox 製作跑酷遊戲時，
+**重生點（SpawnLocation）與檢查點（Checkpoint）**是非常重要的設計元素。
+玩家從綠色起點出發，
+通過樓梯、跳台，沿路經過黃色的 Checkpoint。如果角色不小心掉到紅色死亡區（DeathZone），
+就會死亡並從最近碰過的 Checkpoint 重生。
+這些功能透過 Touched 事件與 player.RespawnLocation 實現，
+並搭配 BillboardGui 顯示提示文字。課程重點包含 SpawnLocation 的建立、碰觸偵測、
+死亡區設計與重生點儲存邏輯，幫助學生理解基礎事件與玩家屬性操作，進而打造有趣又有挑戰的遊戲關卡！
+                
+                `,
+                
+                descriptionList: 
+                [
+                    "認識 SpawnLocation 的功能與屬性（Neutral、Enabled）",
+                    "利用 Touched 偵測玩家碰觸事件",
+                    "使用 player.RespawnLocation 儲存重生位置",
+                    "建立 Part 平台、跳台與階梯",
+                    "製作 DeathZone 並讓角色死亡",
+                    "使用 BillboardGui 顯示提示文字", 
+                    "設計多個 Checkpoint 實現重生記錄功能", 
+                    "建立結尾平台與 ParticleEmitter 煙火特效"
+
+
+                ],
+                code: `-- 建立連續跳躍平台
+for i = 1, 5 do
+    local platform = Instance.new("Part")
+    platform.Size = Vector3.new(6, 1, 6)
+    platform.Position = Vector3.new(i * 8, 10, 0)
+    platform.Anchored = true
+    platform.Parent = workspace
+end`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://heyzine.com/flip-book/a2faa67074.html",
+                image: "images/00Roblox/Roblox 跑酷重生點.png"
+            },
+
+
+
+
+
+            
+
+            {
+                title: "第04課：TBD",
+                description: 
+                `
+                TBD
+                
+                `,
+                
+                descriptionList: ["內容一", "內容二", "內容三"],
+                code: `-- 建立連續跳躍平台
+for i = 1, 5 do
+    local platform = Instance.new("Part")
+    platform.Size = Vector3.new(6, 1, 6)
+    platform.Position = Vector3.new(i * 8, 10, 0)
+    platform.Anchored = true
+    platform.Parent = workspace
+end`,
+                video: "https://www.youtube.com/watch?v=K1tP6e0RPvE",
+                ebook: "https://online.fliphtml5.com/example/jump",
+                image: "images/00Roblox/認識 Roblox 與遊戲世界.jpg"
+            }
+
+            // 你可以繼續新增更多課程
+        ];
+
+        function validateUser() {
+            const name = document.getElementById("name").value.trim();
+            const code = document.getElementById("code").value.trim();
+
+            if (members[name] && members[name] === code) {
+                document.getElementById("resources").style.display = "block";
+                document.getElementById("loginForm").style.display = "none";
+                setupLessonButtons();
+                showLesson(0);
+            } else {
+                alert("姓名或代碼錯誤，請重新輸入");
+            }
+        }
+
+        
+
+        function setupLessonButtons() {
+            const buttonsDiv = document.getElementById("lessonButtons");
+            buttonsDiv.innerHTML = "";
+
+            lessons.forEach((lesson, i) => {
+                const btn = document.createElement("button");
+                btn.textContent = lesson.title;
+                btn.onclick = () => showLesson(i);
+                buttonsDiv.appendChild(btn);
+            });
+        }
+
+        function showLesson(index) {
+            const lesson = lessons[index];
+            const lessonContentDiv = document.getElementById("lessonContent");
+
+            lessonContentDiv.innerHTML = `
+                <h3>${lesson.title}</h3>
+                <img src="${lesson.image}" alt="${lesson.title}" />
+                <p><strong>01 大概內容：</strong><br>${lesson.description}</p>
+                <p><strong>02 課程重點：</strong></p>
+                <ul>
+                    ${lesson.descriptionList.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                <p><strong>03 腳本 - 程式碼範例：</strong></p>
+                <pre><code>${lesson.code}</code></pre>
+                <p><strong>04 影片連結：</strong><br>
+                    🎬 <a href="${lesson.video}" target="_blank" rel="noopener">相關教學影片</a>
+                </p>
+                <p><strong>05 電子書連結：</strong><br>
+                    📖 <a href="${lesson.ebook}" target="_blank" rel="noopener">電子書閱讀</a>
+                </p>
+            `;
+        }
+    </script>
+
+
+
+</head>
+
+
+
+<body>
+<header>
+    <!-- <img src="images/00Roblox/RobloxPart.png" alt="Roblox 標誌" /> -->
+    ROBLOX 學習資源
+</header>
+
+
+    
+    <nav>
+        <a href="index.html">🏠 首頁</a>
+        <a href="minecraft.html">🎨 作品展示</a>
+        <a href="learningMC.html">📚 麥快學習資源</a>
+        <a href="learningRO.html">📚 Roblox學習資源</a>
+        <a href="contact.html">📩 聯絡我們</a>
+    </nav>
+
+    <section id="loginForm" style="max-width: 400px; margin: 30px auto;">
+        <h2>請輸入姓名與代碼</h2>
+        <form onsubmit="event.preventDefault(); validateUser();">
+            <label for="name">姓名：</label><br />
+            <input type="text" id="name" required autocomplete="off" /><br /><br />
+            <label for="code">代碼：</label><br />
+            <input type="text" id="code" required autocomplete="off" /><br /><br />
+            <button type="submit">確認</button>
+        </form>
+    </section>
+
+    <section id="resources">
+        <h2>ROBLOX 課程資源（10堂課）</h2>
+        <div id="lessonButtons"></div>
+        <div id="lessonContent" class="lesson-block"></div>
+    </section>
+
+    <footer>&copy; 2025 Roblox 一鍵學園 | 版權所有</footer>
+</body>
+</html>
