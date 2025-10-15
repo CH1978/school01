@@ -127,6 +127,16 @@
             margin-top: 10px;
             border-radius: 10px;
         }
+
+        .lesson-image {
+    width: 100%;
+    max-width: 600px;  /* 調整你想要的寬度 */
+    display: block;     /* 讓每張圖換行 */
+    margin: 20px auto;  /* 上下間距 + 水平置中 */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
     </style>
     
     <script>
@@ -134,7 +144,7 @@
 const members = {
   "test": "00000",  
   "何雨桐": "48219",
-  "謝朋洧": "73054",
+  "test": "00000",
   "吳奕霆": "15983",
   "吳鈺棠": "60427",
   "王鉦翔": "92751",
@@ -189,10 +199,27 @@ const members = {
                 code: "",
                 video: "",
                 ebook: "https://online.fliphtml5.com/jkcwq/kjco/",
-                image: "images/00Minecraft/SteveSpinner.png"
+                image: "images/00MINECRAFT/01FOX/狐狸屋森林.png"
               },
 
-
+            {
+                title: "Minecraft 教育版：狐狸屋",
+                description:  "運用程式一磚一瓦打造出狐狸造型的房屋，展現邏輯思考與創造力的完美結合。",
+                descriptionList: [
+                    '<a href="https://www.youtube.com/embed/dAL3eIA9m4Y" target="_blank">影片01_基本架構</a>'
+                
+                ],
+                code: "",
+                video: "",
+                ebook: "https://online.fliphtml5.com/jkcwq/kjco/",
+                
+    images: [
+        "images/00MINECRAFT/01FOX/狐狸屋森林.png",
+        "images/00MINECRAFT/01FOX/狐狸程式碼.png",
+        "images/00MINECRAFT/01FOX/狐狸程式碼色碼.png"
+    ]
+                        
+            },
 
 
             {
@@ -206,6 +233,7 @@ const members = {
                 ebook: "https://online.fliphtml5.com/jkcwq/kjco/",
                 image: "images/00Minecraft/SteveSpinner.png"
             },
+
             {
                 title: "Minecraft 教育版：機器系列_飛機",
                 description: "透過三部影片學習飛機模型的設計、程式與應用，並搭配電子書進行延伸操作。",
@@ -272,7 +300,8 @@ const members = {
                 ${lesson.code ? `<h4>範例程式碼</h4><pre>${lesson.code}</pre>` : ""}
                 ${lesson.video ? `<h4>影片資源</h4><iframe width="100%" height="315" src="${lesson.video}" frameborder="0" allowfullscreen></iframe>` : ""}
                 ${lesson.ebook ? `<h4>電子書</h4><a href="${lesson.ebook}" target="_blank">點我閱讀</a>` : ""}
-                ${lesson.image ? `<img class="lesson-image" src="${lesson.image}" alt="課程圖片">` : ""}
+                ${lesson.images ? lesson.images.map(img => `<img class="lesson-image" src="${img}" alt="課程圖片">`).join("") : ""}
+
             `;
         }
     </script>
