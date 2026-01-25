@@ -210,7 +210,12 @@
                 <option value="minecraft">Minecraft</option>
                 <option value="roblox">Roblox</option>
             </select>
-            <input type="text" id="name" name="name" placeholder="輸入姓名" required />
+
+            <!-- 改成下拉式選單 -->
+            <select id="name" required>
+                <option value="">請選擇姓名</option>
+            </select>
+
             <input type="text" id="code" name="code" placeholder="輸入代碼" required />
             <button type="submit">驗證</button>
         </form>
@@ -255,58 +260,69 @@
     const users =
      {
 minecraft: [
-    { name: '何雨桐', code: '48219', account: 'Panda01@pandach2025.onmicrosoft.com', password: 'X@086839049157ow' },
-    { name: '謝朋洧', code: '73054', account: 'Panda02@pandach2025.onmicrosoft.com', password: 'G$083551744384an' },
-    { name: '吳奕霆', code: '15983', account: 'Panda03@pandach2025.onmicrosoft.com', password: 'C$904605845364uw' },
-    { name: '吳鈺棠', code: '60427', account: 'Panda04@pandach2025.onmicrosoft.com', password: 'J$293946681679uc' },
-    { name: '王鉦翔', code: '92751', account: 'Panda05@pandach2025.onmicrosoft.com', password: 'R#161112748061up' },
-    { name: '黃秉昇', code: '31865', account: 'Panda06@pandach2025.onmicrosoft.com', password: 'B!170245580604od' },
-    { name: '張程宇', code: '57204', account: 'Panda07@pandach2025.onmicrosoft.com', password: 'N#648799267715ay' },
-    { name: '魏妘芳', code: '80613', account: 'Panda08@pandach2025.onmicrosoft.com', password: 'B$574932212401ub' },
-    { name: '吳禹秀', code: '26490', account: 'Panda09@pandach2025.onmicrosoft.com', password: 'F@463354645162ob' },
-    { name: '楊子立', code: '49172', account: 'Panda10@pandach2025.onmicrosoft.com', password: 'V@096165611661ov' },
-    { name: '張育傑', code: '83506', account: 'Panda11@pandach2025.onmicrosoft.com', password: 'Z%832613275869ah' },
-    { name: '楊子正', code: '72039', account: 'Panda12@pandach2025.onmicrosoft.com', password: 'X#093649595423ul' },
-    { name: '蔡鎮憶', code: '60418', account: 'Panda13@pandach2025.onmicrosoft.com', password: 'W!201395094146ot' },
-    { name: '游祐睿', code: '95720', account: 'Panda14@pandach2025.onmicrosoft.com', password: 'S$204106714060oc' },
-    { name: '陳繹安', code: '18347', account: 'Panda15@pandach2025.onmicrosoft.com', password: 'H@909409359873oc' }
+    { name:'王景弘', code:'1234', account:'user16@happymc.onmicrosoft.com', password:'J(445635398701ud'},
+    { name:'王泫云', code:'1234', account:'user17@happymc.onmicrosoft.com', password:'R$830300567082on'},
+    { name:'王泫棠', code:'1234', account:'user14@happymc.onmicrosoft.com', password:'K)109894731048uc'},
+    { name:'彭晧程', code:'A1', account:'user01@happymc.onmicrosoft.com', password:'S*768966901713od'},
+    { name:'周辰翰', code:'B2', account:'user02@happymc.onmicrosoft.com', password:'K#940740705010uy'},
+    { name:'彭翊婷', code:'A2', account:'user03@happymc.onmicrosoft.com', password:'B&419900495680ug'},
+    { name:'謝朋洧', code:'B3', account:'user04@happymc.onmicrosoft.com', password:'M$583303890391uy'},
+    { name:'鄭仲恆', code:'A3', account:'user05@happymc.onmicrosoft.com', password:'L*258436661447am'},
+    { name:'劉伊芮', code:'B4', account:'user06@happymc.onmicrosoft.com', password:'D^914065301740uc'},
+    { name:'陳宇辰', code:'A4', account:'user07@happymc.onmicrosoft.com', password:'T@918666410281ox'},
+    { name:'何晁寬', code:'B5', account:'user08@happymc.onmicrosoft.com', password:'P%859477812201or'},
+    { name:'彭翊真', code:'A5', account:'user09@happymc.onmicrosoft.com', password:'N&842488749794us'},
+    { name:'游宸瑋', code:'B6', account:'user10@happymc.onmicrosoft.com', password:'C#246428836453os'},
+    { name:'林羿融', code:'A6', account:'user11@happymc.onmicrosoft.com', password:'J$001921079398oj'},
+    { name:'賴炵伃', code:'B7', account:'user12@happymc.onmicrosoft.com', password:'F.629602613963op'},
+    { name:'方芊媚', code:'A7', account:'user13@happymc.onmicrosoft.com', password:'F&106012897625os'},
+    { name:'鄭惟哲', code:'B8', account:'user14@happymc.onmicrosoft.com', password:'K)109894731048uc'},
+    { name:'游祐睿', code:'A8', account:'user15@happymc.onmicrosoft.com', password:'X.923641035309ok'}
 ],
 
-
-
-        roblox: [
-
-    { name: '00000', code: '00000', account: 'PandaT_39xq', password: 'C5%z8p7&' },
-    { name: '王景弘', code: '00000', account: 'PandaT_47mz', password: 'Learn@B7t5$z'},
-    { name: '王泫云', code: '00000', account: 'PandaT_58kl', password: 'Teach%F6k2&n' },
-    { name: '王泫棠', code: '00000', account: 'PandaT_63nw', password: 'Class!P1v8*q' },
-
-    { name: '廖崇皓', code: 'A9T3K', account: 'TWPandaTW02', password: '58D39F2G6' },
-    { name: '陳怡安', code: 'X4R7M', account: 'TWPandaTW03', password: '7H042J8K5' },
-    { name: '方芊媚', code: 'B2L9Z', account: 'TWPandaTW04', password: '1Q02W9E3R' },
-    { name: '謝棠宇', code: 'H7P8D', account: 'TWPandaTW05', password: '8T3Y0U9I2' },
-    { name: '楊子立', code: 'V3N5Q', account: 'TWPandaTW06', password: '6P4A2S1D0' },
-    { name: '楊子正', code: 'K8W2J', account: 'TWPandaTW07', password: '5Z7X0C1V3' },
-    { name: '魏瑜萱', code: 'D6M1E', account: 'TWPandaTW08', password: '9B6N1M4L3' },
-    { name: '游祐睿', code: 'Z5C4U', account: 'TWPandaTW09', password: '7Q3W0E9R8' },
-    { name: '楊承勳', code: 'Q3Y6A', account: 'TWPandaTW10', password: '1T0Y4U8I3' },
-    { name: '林宥廷', code: 'F1G7N', account: 'TWPandaTW11', password: '6P8A2S0D3' },
-    { name: '廖崇佑', code: 'J6E5W', account: 'TWPandaTW12', password: '9L1K7J0H2' },
-    { name: '楊健廷', code: 'P7L3H', account: 'TWPandaTW13', password: '3Z0X9C8V1' },
-    { name: '廖英棋', code: 'A1C6Q', account: 'TWPandaTW14', password: '8B4N0M1L3' },
-    { name: '陳祈安', code: 'K5G4N', account: 'TWPandaTW15', password: '2Q5W1E9R6' },
-    { name: '施鈞彥', code: 'Z6T2A', account: 'TWPandaTW16', password: '4T6Y0U8I1' }
+roblox: [
+    { name:'王景弘', code:'1234', account:'Chinghungw1978', password:'CHb8703118'},
+    { name:'王泫云', code:'1234', account:'Lucy20120909', password:'b8703118'},
+    { name:'王泫棠', code:'1234', account:'Luna20141113', password:'b8703118'},
+    { name:'吳恩碩', code:'A1', account:'RCPolarBear_03', password:'PB03!Week1'},
+    { name:'梁復瑄', code:'B1', account:'RCPolarBear_04', password:'PB04!Week1'},
+    { name:'黃柏誠', code:'A2', account:'RCPolarBear_05', password:'PB05!Week1'},
+    { name:'馮筠哲', code:'B2', account:'RCPolarBear_06', password:'PB06!Week1'},
+    { name:'吳鈺棠', code:'A3', account:'RCPolarBear_07', password:'PB07!Week1'},
+    { name:'廖泱智', code:'B3', account:'RCPolarBear_08', password:'PB08!Week1'},
+    { name:'游宸瑋', code:'A4', account:'RCPolarBear_09', password:'PB09!Week1'},
+    { name:'吳沁學', code:'B4', account:'RCPolarBear_10', password:'PB10!Week1'},
+    { name:'王鉦翔', code:'A5', account:'RCPolarBear_11', password:'PB11!Week1'},
+    { name:'黃秉昇', code:'B5', account:'RCPolarBear_12', password:'PB12!Week1'},
+    { name:'張育傑', code:'A6', account:'RCPolarBear_13', password:'PB13!Week1'},
+    { name:'馮紹淮', code:'B6', account:'RCPolarBear_14', password:'PB14!Week1'},
+    { name:'游祐睿', code:'A7', account:'RCPolarBear_15', password:'PB15!Week1'},
+    { name:'T1', code:'1234', account:'RCPolarBear_16', password:'PB16!Week1'}
 ]
-
-
-
-
-    };
+};
 
     const form = document.getElementById('loginForm');
     const resultSection = document.getElementById('resultSection');
     const accountField = document.getElementById('account');
     const passwordField = document.getElementById('password');
+
+    const platformSelect = document.getElementById('platform');
+    const nameSelect = document.getElementById('name');
+
+    // 平台選擇後更新姓名下拉選單
+    platformSelect.addEventListener('change', () => {
+        nameSelect.innerHTML = '<option value="">請選擇姓名</option>';
+
+        const platform = platformSelect.value;
+        if (!platform || !users[platform]) return;
+
+        users[platform].forEach(u => {
+            const opt = document.createElement('option');
+            opt.value = u.name;
+            opt.textContent = u.name;
+            nameSelect.appendChild(opt);
+        });
+    });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
