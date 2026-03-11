@@ -65,15 +65,27 @@
             font-size: 14px;
         }
 
-        input, button {
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 16px;
-            border: 2px solid #0097A7;
-            border-radius: 5px;
-        }
 
-        input:focus, button:focus {
+input, select, button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: 2px solid #0097A7;
+    border-radius: 5px;
+    width: 250px;      /* 統一寬度 */
+    box-sizing: border-box;
+}
+
+
+#loginForm input,
+#loginForm select {
+    width: 300px;
+}
+
+
+
+
+input:focus, select:focus, button:focus {
             border-color: #004D40;
             outline: none;
         }
@@ -141,25 +153,39 @@
     
     <script>
 
+
+function loadNames() {
+    const select = document.getElementById("name");
+
+    Object.keys(members).forEach(name => {
+        const option = document.createElement("option");
+        option.value = name;
+        option.textContent = name;
+        select.appendChild(option);
+    });
+}
+
+
+
+
 const members = {
+  "吳恩碩": "A1",
+  "何雨桐": "A2",
+  "謝朋洧": "A3",
+  "吳奕霆": "A4",
+  "吳鈺棠": "A5",
+  "李淨芛": "A6",
+  "魏妘芳": "A7",
+  "楊子立": "A8",
+  "張育傑": "A9",
+  "林敬心": "A10",
+  "楊子正": "A11",
+  "魏瑜萱": "A12",
+  "蔡鎮憶": "A13",
+  "游祐睿": "A14",
   "王景弘": "1234",
   "王泫云": "1234",
-  "王泫棠": "1234",
-  "彭晧程": "A1",
-  "周辰翰": "B2",
-  "彭翊婷": "A2",
-  "謝朋洧": "B3",
-  "鄭仲恆": "A3",
-  "劉伊芮": "B4",
-  "陳宇辰": "A4",
-  "何晁寬": "B5",
-  "彭翊真": "A5",
-  "游宸瑋": "B6",
-  "林羿融": "A6",
-  "賴炵伃": "B7",
-  "方芊媚": "A7",
-  "鄭惟哲": "B8",
-  "游祐睿": "A8"
+  "王泫棠": "1234"
 };
 
 
@@ -328,6 +354,18 @@ const members = {
 
             `;
         }
+
+
+
+window.onload = function() {
+    loadNames();
+};
+
+
+
+
+
+
     </script>
 </head>
 <body>
@@ -347,8 +385,13 @@ const members = {
         <section id="loginForm">
             <h2>請輸入姓名與代碼</h2>
             <form onsubmit="event.preventDefault(); validateUser();">
-                <label for="name">姓名：</label><br>
-                <input type="text" id="name" required><br><br>
+
+<label for="name">姓名：</label><br>
+<select id="name" required>
+    <option value="">請選擇姓名</option>
+</select><br><br>
+
+
                 <label for="code">代碼：</label><br>
                 <input type="text" id="code" required><br><br>
                 <button type="submit">確認</button>
